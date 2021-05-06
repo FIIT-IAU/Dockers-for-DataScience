@@ -1,0 +1,54 @@
+FROM ubuntu:20.04
+
+ARG conda_version=4.9.2
+ARG python_version=3.8
+
+LABEL version='0.1.0'
+LABEL maintainer="Giang Nguyen <giang.nguyen@savba.sk>"
+LABEL description="Data Science stack with conda"
+
+ENV LANG C.UTF-8
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+	git \
+	wget \
+	vim \
+	ca-certificates && \
+	rm -rf /var/lib/apt/lists/*
+
+RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+RUN bash Miniconda3-latest-Linux-x86_64.sh -b -p /miniconda
+ENV PATH=$PATH:/miniconda/condabin:/miniconda/bin
+
+RUN conda install -y python=${python_version} && \
+    pip install --upgrade pip && \
+    conda install -c defaults -c conda -c conda-forge \
+	cython \
+	mkl-service \
+	numpy \
+	scipy \
+	sympy \
+	pandas \
+	pandasql \
+	statsmodels \
+	scikit-learn \
+	matplotlib \
+	seaborn \
+	jupyter \
+	jupyterlab \
+	nltk \
+	gensim \
+	pydot \
+	h5py \
+	python-dateutil \
+	pydot \
+	mpld3 \
+	pip && \
+    pip install \
+	tensorflow 
+ 	keras
+ 	pycodestyle
+
+WORKDIR /code
+
+CMD ["jupyter", "notebook", "--port=8888", "--no-browser", "--ip=0.0.0.0", "--allow-root"]

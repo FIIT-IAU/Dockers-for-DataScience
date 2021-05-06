@@ -1,0 +1,41 @@
+# CONDA ENV 
+#   conda env list				# list env
+#   conda remove --name {env_name} --all	# remove env
+#   conda list -n {env_name}			# list all packages in {env_name}
+# INSTALL
+#   conda env create -f filename.yml
+#   source activate {env_name}
+# UPDATE
+#   conda env update -f filename.yml        	# this is where the update magic happens
+#   source activate {env_name}
+
+name: dsenv
+channels:
+- defaults
+- conda
+- conda-forge
+dependencies:
+- python=3.8
+- numpy
+- scipy
+- sympy
+- pandas
+- pandasql
+- statsmodels
+- scikit-learn
+- matplotlib
+- seaborn
+- jupyter
+- jupyterlab
+- nltk
+- gensim
+- pydot
+- h5py
+- python-dateutil
+- pydot
+- mpld3
+- pip
+- pip:
+  - tensorflow 
+  - keras
+  - pycodestyle
