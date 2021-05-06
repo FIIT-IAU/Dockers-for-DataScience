@@ -1,21 +1,33 @@
-# Docker Data Science /home/user/work/docker/ds
+# Docker Data Science /home/user/docker-ds
 
 # build
-docker build -f Dockerfile -t ds-docker .
-	
+```bash
+docker build -f Dockerfile -t my-ds-docker .
+```
+
 # run
-docker run -p 8888:8888 ds-docker
-	
+```bash
+docker run -p 8888:8888 my-ds-docker
+```
+
 # sharing folder between host and docker
-docker run -p 8888:8888 -v /home/user/work/docker/ds/code:/code ds-docker
-	
+```bash
+docker run -p 8888:8888 -v /home/user/docker-ds/code:/code my-ds-docker
+```
+
 # interactive
+```bash
 docker container ls --all
 docker exec -it containerID /bin/bash
-	
+```
+
 # stop
+```bash
 docker stop containerID
-	
+```
+
 # clean
+```bash
 docker image ls
 docker system prune -a
+```
