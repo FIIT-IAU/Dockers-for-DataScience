@@ -1,4 +1,4 @@
-# Docker Data Science 
+# Docker for Data Science 
 ```bash
 cd /path/to/docker-ds
 ```
