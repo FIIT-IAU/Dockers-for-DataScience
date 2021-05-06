@@ -1,4 +1,7 @@
-# Docker Data Science /home/user/docker-ds
+# Docker Data Science 
+```bash
+cd /path/to/docker-ds
+```
 
 # build
 ```bash
@@ -12,7 +15,7 @@ docker run -p 8888:8888 my-ds-docker
 
 # sharing folder between host and docker
 ```bash
-docker run -p 8888:8888 -v /home/user/docker-ds/code:/code my-ds-docker
+docker run -p 8888:8888 -v /path/to/docker-ds/code:/code my-ds-docker
 ```
 
 # interactive
