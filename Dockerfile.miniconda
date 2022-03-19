@@ -4,7 +4,7 @@ ARG conda_version=4.9.2
 ARG python_version=3.8
 
 LABEL version='0.1.0'
-LABEL maintainer="Giang Nguyen <giang.nguyen@savba.sk>"
+LABEL maintainer="Giang Nguyen <giang.nguyen@stuba.sk>"
 LABEL description="Data Science stack with conda"
 
 ENV LANG C.UTF-8
