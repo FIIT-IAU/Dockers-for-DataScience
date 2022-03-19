@@ -3,7 +3,7 @@ FROM tensorflow/tensorflow:2.3.1
 ARG DEBIAN_FRONTEND=noninteractive
 
 LABEL version='0.1.0'
-LABEL maintainer="Giang Nguyen <giang.nguyen@savba.sk>"
+LABEL maintainer="Giang Nguyen <giang.nguyen@stuba.sk>"
 LABEL description="Data Science stack"
 
 ENV LANG C.UTF-8
